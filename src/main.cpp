@@ -14,6 +14,7 @@ int main()
 
     sf::CircleShape shape(50.f);
     shape.setFillColor(sf::Color(100, 250, 50));
+    shape.setOrigin(50.f, 50.f);
 
     // run the program as long as the window is open
     while (window.isOpen())
@@ -31,7 +32,11 @@ int main()
         window.clear(sf::Color::Black);
 
         // draw everything here...
-        window.draw(shape);
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        {
+            shape.setPosition(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
+            window.draw(shape);
+        }
 
         // end the current frame
         window.display();
