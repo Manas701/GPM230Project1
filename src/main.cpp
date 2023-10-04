@@ -1,21 +1,31 @@
 #include <SFML/Graphics.hpp>
 
-int main()
+    int main()
 {
-    auto window = sf::RenderWindow{ { 1920u, 1080u }, "CMake SFML Project" };
-    window.setFramerateLimit(144);
+    // create the window
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Window To Your Soul");
 
+    // run the program as long as the window is open
     while (window.isOpen())
     {
-        for (auto event = sf::Event{}; window.pollEvent(event);)
+        // check all the window's events that were triggered since the last iteration of the loop
+        sf::Event event;
+        while (window.pollEvent(event))
         {
+            // "close requested" event: we close the window
             if (event.type == sf::Event::Closed)
-            {
                 window.close();
-            }
         }
 
-        window.clear();
+        // clear the window with black color
+        window.clear(sf::Color::Black);
+
+        // draw everything here...
+        // window.draw(...);
+
+        // end the current frame
         window.display();
     }
+
+    return 0;
 }
