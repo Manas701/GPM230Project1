@@ -10,12 +10,15 @@ int main()
     } */
 
     const float circleRadius = 10.f;
+    float circleR = 255.f;
+    float circleG = 255.f;
+    float circleB = 255.f;
 
     // create the window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Window To Your Soul");
 
     sf::CircleShape shape(circleRadius);
-    shape.setFillColor(sf::Color(100, 250, 50));
+    shape.setFillColor(sf::Color(255, 255, 255));
     shape.setOrigin(circleRadius, circleRadius);
 
     // run the program as long as the window is open
@@ -30,8 +33,11 @@ int main()
                 window.close();
         }
 
-        // clear the window with black color
-        // window.clear(sf::Color::Black);
+        // clear the window with black color if spacebar is pressed
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        {
+            window.clear(sf::Color::Black);
+        }
 
         // draw everything here...
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
