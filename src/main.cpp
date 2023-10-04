@@ -1,9 +1,19 @@
 #include <SFML/Graphics.hpp>
 
-    int main()
+int main()
 {
+
+    /* sf::Texture texture;
+    if (!texture.loadFromFile("assets/pyoro.png"))
+    {
+        // error
+    } */
+
     // create the window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Window To Your Soul");
+
+    sf::CircleShape shape(50.f);
+    shape.setFillColor(sf::Color(100, 250, 50));
 
     // run the program as long as the window is open
     while (window.isOpen())
@@ -21,7 +31,7 @@
         window.clear(sf::Color::Black);
 
         // draw everything here...
-        // window.draw(...);
+        window.draw(shape);
 
         // end the current frame
         window.display();
