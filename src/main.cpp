@@ -38,27 +38,27 @@ int main()
             window.clear(sf::Color::Black);
         }
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && (circleR < 255.f))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && (circleR < 255.f))
         {
             circleR+=0.01;
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && (circleG < 255.f))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && (circleG < 255.f))
         {
             circleG+=0.01;
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && (circleB < 255.f))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (circleB < 255.f))
         {
             circleB+=0.01;
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && (circleR > 0.f))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && (circleR > 0.f))
         {
             circleR-=0.01;
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && (circleG > 0.f))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && (circleG > 0.f))
         {
             circleG-=0.01;
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (circleB > 0.f))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && (circleB > 0.f))
         {
             circleB-=0.01;
         }
