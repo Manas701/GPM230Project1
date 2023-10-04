@@ -18,7 +18,6 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800, 600), "Window To Your Soul");
 
     sf::CircleShape shape(circleRadius);
-    shape.setFillColor(sf::Color(255, 255, 255));
     shape.setOrigin(circleRadius, circleRadius);
 
     // run the program as long as the window is open
@@ -38,6 +37,34 @@ int main()
         {
             window.clear(sf::Color::Black);
         }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && (circleR < 255.f))
+        {
+            circleR+=0.01;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && (circleG < 255.f))
+        {
+            circleG+=0.01;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && (circleB < 255.f))
+        {
+            circleB+=0.01;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && (circleR > 0.f))
+        {
+            circleR-=0.01;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && (circleG > 0.f))
+        {
+            circleG-=0.01;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (circleB > 0.f))
+        {
+            circleB-=0.01;
+        }
+
+
+        shape.setFillColor(sf::Color(circleR, circleG, circleB));
 
         // draw everything here...
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
